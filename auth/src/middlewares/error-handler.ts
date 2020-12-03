@@ -4,7 +4,7 @@ import { InternalError } from "../errors/internal-error";
 
 export const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
   if (err instanceof CustomError) {
-    res.status(err.statusCode).send(err.serializeErrors());
+    return res.status(err.statusCode).send(err.serializeErrors());
   }
 
   const internalError = new InternalError("Unhandled internal error");

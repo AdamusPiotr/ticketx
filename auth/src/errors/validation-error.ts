@@ -7,7 +7,7 @@ export class ValidationError extends CustomError {
   constructor(private error: yup.ValidationError) {
     super("Validation error");
 
-    Object.setPrototypeOf(this, ValidationError);
+    Object.setPrototypeOf(this, ValidationError.prototype);
   }
 
   serializeErrors() {

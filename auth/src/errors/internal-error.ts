@@ -6,7 +6,7 @@ export class InternalError extends CustomError {
   constructor(message: string) {
     super(message);
 
-    Object.setPrototypeOf(this, InternalError);
+    Object.setPrototypeOf(this, InternalError.prototype);
   }
 
   serializeErrors() {
